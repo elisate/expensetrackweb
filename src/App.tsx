@@ -6,8 +6,8 @@ import DashboardLayout from "./dashboards/pages/Dashboardlayout";
 import Dashboard from "./dashboards/pages/Dashboard";
 
 
-import ExpenseList from "./dashboards/pages/ExpenseList";
-import ExpenseForm from "./dashboards/pages/ExpenseForm";
+
+
 
 const App = () => {
   return (
@@ -19,8 +19,7 @@ const App = () => {
         <Route element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/createExpense" element={<ExpenseForm />} />
-          <Route path="/expenseList" element={<ExpenseList/>}/>
+         
         </Route>
       </Routes>
     </BrowserRouter>
