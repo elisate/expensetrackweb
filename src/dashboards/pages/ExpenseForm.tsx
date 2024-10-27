@@ -24,7 +24,7 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onAddExpense }) => {
       alert("Please fill out all fields.");
       return;
     }
-    const newExpense = {
+    const newExpense: Expense = {
       id: new Date().toISOString(),
       amount: parseFloat(amount),
       category,
@@ -39,43 +39,51 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onAddExpense }) => {
   };
 
   return (
-    <div className="ml-[14rem] pt-[6rem] pr-[2rem]">
-      <form onSubmit={handleSubmit} className="p-4 flex flex-col gap-4">
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="border p-2 rounded"
-          required
-        />
-        <input
-          type="text"
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="border p-2 rounded"
-          required
-        />
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          className="border p-2 rounded"
-          required
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="border p-2 rounded"
-          required
-        />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-          Add Expense
-        </button>
-      </form>
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
+        <h2 className="text-2xl font-bold text-green-500 mb-4 text-center">
+          Add New Expense
+        </h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <input
+            type="number"
+            placeholder="Amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring focus:ring-green-300 transition duration-200"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring focus:ring-green-300 transition duration-200"
+            required
+          />
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring focus:ring-green-300 transition duration-200"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring focus:ring-green-300 transition duration-200"
+            required
+          />
+          <button
+            type="submit"
+            className="bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition duration-200"
+          >
+            Add Expense
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
