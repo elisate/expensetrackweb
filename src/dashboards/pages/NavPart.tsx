@@ -1,6 +1,5 @@
 
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { BiMessage } from "react-icons/bi";
 import { IoIosList } from "react-icons/io";
 
 
@@ -20,13 +19,7 @@ function NavPart() {
         </span>
       </div>
 
-      {/* Message Icon */}
-      <div className="relative mx-2 text-xl text-gray-700">
-        <BiMessage />
-        <span className="absolute top-[-7px] right-[-5px] bg-red-500 text-white rounded-full px-1.5 py-0.5 text-xs">
-          12
-        </span>
-      </div>
+      
 
       {/* List Icon */}
       <div className="relative mx-2 text-xl text-gray-700">
