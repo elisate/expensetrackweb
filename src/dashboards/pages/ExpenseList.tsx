@@ -23,6 +23,12 @@ const ExpenseList: React.FC<ExpenseListProps> = ({
     ? expenses.filter((exp) => exp.category === filterCategory)
     : expenses;
 
+  // Calculate total of filtered expenses
+  const totalAmount = filteredExpenses.reduce(
+    (sum, exp) => sum + exp.amount,
+    0
+  );
+
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-full max-w-3xl p-6 bg-white shadow-lg rounded-lg">
@@ -78,6 +84,11 @@ const ExpenseList: React.FC<ExpenseListProps> = ({
             ))}
           </tbody>
         </table>
+
+        {/* Total Expenses Section */}
+        <div className="text-right font-semibold text-gray-700 mt-4">
+          Total Expenses: ${totalAmount.toFixed(2)}
+        </div>
       </div>
     </div>
   );
