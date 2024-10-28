@@ -88,7 +88,7 @@ const Dashboard: React.FC<DashboardProps> = ({ expenses }) => {
                   textColor: "#636363",
                   pathColor: "#93CAAB",
                   trailColor: "#e0e0e0",
-                  textSize: "18px",
+                  textSize: "12px",
                   pathTransitionDuration: 0.5,
                 })}
               />
